@@ -4,7 +4,7 @@ Part 1:-
 
 [x] list component
 [x] list title -- pushed on github
-[ ] card component
+[x] card component
 [ ] input component
 
 Part 2:-

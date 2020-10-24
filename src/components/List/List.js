@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
 import {Paper, Typography,CssBaseline} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import Title from './Title';
+import Card from './Card';
 
 const useStyle = makeStyles((theme) => ({
     root: {
@@ -18,6 +19,11 @@ export default function List() {
             <Paper className={classes.root}>
                 <CssBaseline />
                 <Title/>
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
             </Paper>
         </div>
     );
