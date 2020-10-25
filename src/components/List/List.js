@@ -20,7 +20,7 @@ export default function List( {list}) {
                 <CssBaseline />
                 <Title title={list.title}/>
                 {list.cards.map((card) =>(
-                    <Card key={card.id}/>
+                    <Card key={card.id} card={card}/>
                 ))}
                 <InputContainer />
             </Paper>
