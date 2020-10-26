@@ -4,7 +4,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import Title from './Title';
 import Card from './Card';
 import InputContainer from '../input/InputContainer';
-import { Droppable } from 'react-beautiful-dnd';
+import { Draggable, Droppable } from 'react-beautiful-dnd';
 const useStyle = makeStyles((theme) => ({
     root: {
         width: 300,
@@ -16,11 +16,13 @@ const useStyle = makeStyles((theme) => ({
     }
 }));
 
-export default function List( {list}) {
+export default function List( {list, index}) {
     const classes = useStyle();
     return (
-        <div>
-            <Paper className={classes.root}>
+        <Draggable draggableId={list.id} index={index}>
+            {(provided) =>(
+            <div {...provided.draggableProps} ref={provided.innerRef}>
+            <Paper className={classes.root} {...provided.dragHandleProps}>
                 <CssBaseline />
                 <Title title={list.title} listId ={list.id}/>
                 <Droppable droppableId = {list.id}>
@@ -36,5 +38,8 @@ export default function List( {list}) {
                 <InputContainer listId={list.id} type='card'/>
             </Paper>
         </div>
+            )}
+        
+        </Draggable>
     );
 }
