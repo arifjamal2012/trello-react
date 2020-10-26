@@ -16,11 +16,14 @@ Part 2:-
 
 Part 3:-
 
-[ ] drag and drop card in the same list
-[ ] drag and drop card in the sdifferent list
+[x] drag and drop card in the same list
+[x] drag and drop card in the different list
 [ ] drag and drop list
 
 Part 4:-
 
 [ ] navigation bar
-[ ]
+[ ] sidemenu
+[ ] BoxMenu
+[ ] BoxoptionImages
+[ ] BoxoptoonColors
