@@ -25,23 +25,25 @@ const useStyle = makeStyles((theme) => ({
 
 }));
 
-export default function InputCard({setOpen,listId}) {
+export default function InputCard({setOpen,listId ,type}) {
     const classes = useStyle();
-    const {addMoreCard} = useContext(storeApi);
-    const[cardTitle,setCardTitle] = useState('');
+    const {addMoreCard,addMoreList} = useContext(storeApi);
+    const[title,setTitle] = useState('');
     const handleOnChange =(e) => {
-        setCardTitle(e.target.value);
+        setTitle(e.target.value);
     };
     const handleBtnConfirm = () => {
-        addMoreCard(cardTitle,listId);
-        setCardTitle('');
+        if(type ==='card'){
+        addMoreCard(title,listId);
+        setTitle('');
         setOpen(false);
-    };
+    }else {
+        addMoreList(title);
+        setTitle('');
+        setOpen(false);
 
-    const handleBlur = () => {
-        setOpen(false);
-        setCardTitle('');
-    };
+    }
+};
 
     return (
         <div>
@@ -50,15 +52,21 @@ export default function InputCard({setOpen,listId}) {
                 <InputBase 
                 onChange={handleOnChange}
                 multiline 
-                onBlur={handleBlur}
+                onBlur={() => setOpen(false)}
                 fullWidth 
                 inputProps={{className: classes.input}}
-                value={cardTitle}
-                placeholder="Enter the card title"/>
+                value={title}
+                placeholder={
+                    type==='card'
+                    ? "Enter the card title" 
+                    :"Enter list title"}
+                />
             </Paper>  
             </div>
             <div className={classes.confirm}>
-                <Button className={classes.btnConfirm} onClick={handleBtnConfirm}>Add Card</Button> 
+                <Button className={classes.btnConfirm} onClick={handleBtnConfirm}>
+                    {type === "card" ?"Add Card":"Add List"}
+                </Button> 
                 <IconButton onClick={()=>setOpen(false)}>
                 <ClearIcon /> 
                 </IconButton>
