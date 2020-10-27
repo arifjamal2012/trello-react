@@ -1,34 +1,32 @@
 import React from 'react';
+import { Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import {AppBar, Toolbar,Button} from '@material-ui/core';
 
-const useStyle = makeStyles((theme) =>({
-    AppBar: {
-        background:'None',
-    },
-    title: {
-        flexGrow: 1,
-    },
-    btn:{
-        color: '#fff',
-        backgroundColor: '#000'
-
-    }
-    
-    
+const useStyle = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    alignItems: 'center',
+    margin: theme.spacing(2),
+  },
+  title: {
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
+    flexGrow: 1,
+  },
+  btn: {
+    color: '#fff',
+    background: 'hsla(0,0%,100%,.24)',
+  },
 }));
-export default function TopBar({setOpenSideMenu}) {
-    const classes = useStyle();
-    return(
-        <div>
-            <AppBar position='static' className={classes.AppBar} elevation={0}>
-                <Toolbar>
-                <h1 className={classes.title}>Daily todo</h1>
-                <Button className={classes.btn} onClick={()=>setOpenSideMenu(true)}>
-                    Change Background
-                </Button>
-                </Toolbar>
-            </AppBar>
-        </div>
-    )
+
+export default function TopBar({ setOpenSideMenu }) {
+  const classes = useStyle();
+  return (
+    <div className={classes.root}>
+      <Typography className={classes.title}>Daily Trello</Typography>
+      <Button className={classes.btn} onClick={() => setOpenSideMenu(true)}>
+        Change Background
+      </Button>
+    </div>
+  );
 }
