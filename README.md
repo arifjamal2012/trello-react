@@ -22,7 +22,7 @@ Part 3:-
 
 Part 4:-
 
-[ ] navigation bar
+[x] navigation bar
 [ ] sidemenu
 [ ] BoxMenu
 [ ] BoxoptionImages
