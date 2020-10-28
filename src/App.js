@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles} from '@material-ui/core/styles';
 import Wrapper from './components/wrapper';
-//import TopBar from './components/TopBar';
 import Navigation from './components/nav/Navigation';
 
 const useStyles = makeStyles((theme) => ({

@@ -8,7 +8,7 @@ import SideMenu from './SideMenu';
       return (
           <div>
               <TopBar setOpenSideMenu={setOpenSideMenu}/>
-              <SideMenu openSideMenu={openSideMenu} setOpenSideMenu={setOpenSideMenu} />
+              <SideMenu openSideMenu={openSideMenu} setOpenSideMenu={setOpenSideMenu}/>
           </div>
       )
   }

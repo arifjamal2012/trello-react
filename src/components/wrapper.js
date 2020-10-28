@@ -1,6 +1,5 @@
 import React,{useState} from 'react';
 import {v4 as uuid} from "uuid";
-//import InputContainer from './components/input/InputContainer';
 import InputContainer from './input/InputContainer';
 import List from './List';
 import store from '../utils/store';
