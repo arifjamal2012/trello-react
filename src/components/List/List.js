@@ -5,6 +5,7 @@ import Title from './Title';
 import Card from './Card';
 import InputContainer from '../input/InputContainer';
 import { Draggable, Droppable } from 'react-beautiful-dnd';
+
 const useStyle = makeStyles((theme) => ({
     root: {
         width: 300,
